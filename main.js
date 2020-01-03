@@ -2,6 +2,13 @@ const spanText = document.querySelector(".text");
 const txt =
   "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem omnis, laboriosam quod sapiente soluta ad repudiandae voluptas nulla veniam maxime magni voluptatem excepturi non exercitationem distinctio delectus facilis eligendi ipsam. ";
 
-const addLetter = () => {};
+let index = 0;
+const time = 40;
 
-setInterval(addLetter, 50);
+const addLetter = () => {
+  spanText.textContent += txt[index];
+  index++;
+  if (index == txt.length) clearInterval(indexTyping);
+};
+
+const indexTyping = setInterval(addLetter, 40);
